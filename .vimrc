@@ -58,6 +58,7 @@ set autochdir
 set autoread
 
 " Custom
+set fdm=manual
 au BufNewFile,BufRead *.tag set filetype=html
 au BufNewFile,BufRead *.tpl set filetype=html
 au BufNewFile,BufRead *.vue set filetype=html
