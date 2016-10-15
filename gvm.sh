@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+# install nvm
+
+if [[ -d ~/.ggvm ]]; then
+  echo "gvm was already installed."
+else
+  echo "install gvm"
+  git clone https://github.com/moovweb/gvm.git ~/.ggvm
+  source ~/.ggvm/binscripts/gvm-installer
+fi
+
