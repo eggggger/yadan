@@ -38,6 +38,7 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'elzr/vim-json'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
