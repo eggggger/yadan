@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+DIR=$(cd `dirname $0`; pwd)
+
+if [ -e ~/.tmux.conf ]; then
+  mv ~/.tmux.conf ~/.tmux.conf.old
+fi
+
+rm -f ~/.tmux.conf
+ln -s $DIR/.tumx.conf ~/.tmux.conf

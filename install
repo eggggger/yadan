@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+DIR=$(cd $(dirname $0); pwd)
+
+for file in $DIR/*; do
+  if [ -x $file/install ]; then
+    source $file/install
+  fi
+done

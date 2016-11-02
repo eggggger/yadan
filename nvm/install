@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-# install nvm
 
 if [[ -d ~/.nvm ]]; then
   echo "nvm was already installed."
