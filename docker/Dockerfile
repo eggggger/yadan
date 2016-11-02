@@ -18,15 +18,15 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == system
     rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
 
-RUN useradd -ms /bin/zsh dale && passwd -d dale && usermod -aG wheel dale
+RUN useradd -ms /bin/zsh -G wheel yadan && passwd -d yadan
 
-USER dale
+USER yadan
 
 ENV SHELL /bin/zsh
 ENV EDITOR vim
 
-RUN cd ~ && git clone https://github.com/daleoooo/dale-config.git .dale-config && \
-    cd .dale-config && git checkout linux && /bin/zsh ~/.dale-config/setup.sh
+RUN cd ~ && git clone https://github.com/eggggger/yadan.git .yadan-config && \
+    cd .yadan-config && /bin/zsh ~/.yadan-config/install
 
 RUN mkdir ~/Workspace
 
