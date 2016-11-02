@@ -5,7 +5,7 @@ ENV container docker
 ENV TERM screen-256color
 
 RUN yum -y update &&\
-yum -y install vim tmux zsh git-all sudo rubygems openssh-server passwd &&\
+yum -y install vim tmux zsh git-all sudo openssh-server passwd &&\
 yum clean all
 
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service  ] || rm -f $i; done); \
