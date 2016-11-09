@@ -1,4 +1,4 @@
-# ~/.tmuxinator/mit.yml
+# ~/.tmuxinator/github.yml
 
 name: mit
 root: ~/Workspace
@@ -9,14 +9,10 @@ windows:
 <% for @arg in @args -%>
   - editor:
       layout: 3618,272x61,0,0[272x45,0,0{196x45,0,0,64,75x45,197,0,66},272x15,0,46{136x15,0,46,65,135x15,137,46,67}]
-      root: ~/Workspace/mit/<%= @arg %>
+      root: ~/Workspace/github/<%= @arg %>
       panes:
         - vim
-      <% if @arg === 'mit-api' %>
-        - nodemon --exec npm start
-      <% else %>
         - npm start
-      <% end %>
         - clear
         - clear
 <% end %>

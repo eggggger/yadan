@@ -2,6 +2,8 @@
 
 DIR=$(cd $(dirname $0); pwd)
 
+$DIR/zsh/zsh-init
+
 for file in $DIR/*; do
   if [ -x $file/install ]; then
     $file/install

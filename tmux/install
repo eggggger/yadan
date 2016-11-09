@@ -16,4 +16,4 @@ rm -rf ~/.tmuxinator
 rm -rf ~/.tmuxinator.zsh
 cp $DIR/.tmuxinator.zsh ~/.tmuxinator.zsh
 mkdir ~/.tmuxinator
-cp $DIR/mit.yml ~/.tmuxinator/mit.yml
+cp $DIR/*.yml ~/.tmuxinator

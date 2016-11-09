@@ -16,7 +16,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'einars/js-beautify'
-"Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
 Plug 'raimondi/delimitmate'
 Plug 'honza/vim-snippets'
@@ -26,6 +25,9 @@ Plug 'fatih/vim-go'
 Plug 'elzr/vim-json'
 Plug 'Valloric/YouCompleteMe'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'majutsushi/tagbar'
 
 call plug#end()            " required
 
@@ -34,12 +36,32 @@ filetype plugin indent on    " required
 set autochdir
 set autoread
 
+" leader
+let mapleader = ','
+let g:mapleader = ','
+
 " Custom
 set fdm=manual
 au BufNewFile,BufRead *.tag set filetype=html
 au BufNewFile,BufRead *.tpl set filetype=html
 au BufNewFile,BufRead *.vue set filetype=html
 au BufNewFile,BufRead *.jst set filetype=html
+
+"Ag
+let g:ag_working_path_mode="r"
+
+"ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+"tarbar
+nmap <F8> :TagbarToggle<CR>
 
 "NERDTree
 "autocmd VimEnter * NERDTree
@@ -53,10 +75,6 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-
-" leader
-let mapleader = ','
-let g:mapleader = ','
 
 " syntax
 syntax on
