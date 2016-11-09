@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
-DIR=$(cd `dirname $0`; pwd)
+DIR=$(cd $(dirname $0); pwd)
 
 if [ -e ~/.tmux.conf ]; then
   mv ~/.tmux.conf ~/.tmux.conf.old
 fi
+rm -rf ~/.tmux.conf
+ln -s $DIR/.tmux.conf ~/.tmux.conf
 
-rm -f ~/.tmux.conf
-ln -s $DIR/.tumx.conf ~/.tmux.conf
+if [ -e ~/.tmuxinator ]; then
+  rm -rf ~/.tmuxinator.old
+  mv ~/.tmuxinator ~/.tmuxinator.old
+fi
+rm -rf ~/.tmuxinator
+rm -rf ~/.tmuxinator.zsh
+cp $DIR/.tmuxinator.zsh ~/.tmuxinator.zsh
+mkdir ~/.tmuxinator
+cp $DIR/mit.yml ~/.tmuxinator/mit.yml

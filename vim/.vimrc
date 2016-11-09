@@ -16,7 +16,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'einars/js-beautify'
-Plug 'Yggdroot/indentLine'
+"Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
 Plug 'raimondi/delimitmate'
 Plug 'honza/vim-snippets'
@@ -30,17 +30,6 @@ Plug 'jistr/vim-nerdtree-tabs'
 call plug#end()            " required
 
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" cPluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 set autochdir
 set autoread
@@ -53,12 +42,17 @@ au BufNewFile,BufRead *.vue set filetype=html
 au BufNewFile,BufRead *.jst set filetype=html
 
 "NERDTree
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeWinPos="right"
 let g:NERDTreeDirArrowExpandable='▸'
 let g:NERDTreeDirArrowCollapsible='▾'
 let g:nerdtree_tabs_open_on_console_startup=1
+
+"indexLine
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 " leader
 let mapleader = ','

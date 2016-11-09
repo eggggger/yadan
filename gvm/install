@@ -1,5 +1,4 @@
 #!/usr/bin/env zsh
-# install nvm
 
 if [[ -d ~/.ggvm ]]; then
   echo "gvm was already installed."
