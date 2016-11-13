@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER "yadan" <eggggger@gmail.com>
+MAINTAINER "yadan" <eggggger@yahoo.com>
 
 ENV container docker
 ENV TERM screen-256color
