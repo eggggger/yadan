@@ -5,7 +5,7 @@ ENV container docker
 ENV TERM screen-256color
 
 RUN yum -y update && \
-yum -y install vim tmux zsh git-all gcc sudo rubygems openssh-server passwd wget proctools vnstat ncdu lsof nginx htop ack psmisc && \
+yum -y install man-pages man vim tmux zsh git-all gcc sudo rubygems openssh-server passwd wget proctools vnstat ncdu lsof nginx htop ack psmisc && \
 yum clean all
 
 RUN gem install tmuxinator
